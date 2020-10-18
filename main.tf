@@ -7,7 +7,7 @@
 
 # https://www.terraform.io/docs/providers/null/resource.html
 
-resource "null_resource" "install-docker" {
+resource "null_resource" "install-k3s" {
 
   #count = var.docker ? 1 : 0
 

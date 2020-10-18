@@ -22,5 +22,5 @@ module "simple-k3s-ec2-sg" {
   description = "To allow SSH."
 
   vpc_id = module.simple-vpc.id
-  
+
 }

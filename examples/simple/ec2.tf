@@ -1,4 +1,4 @@
-﻿#      ______    _____   ___  
+#      ______    _____   ___  
 #     |  ____|  / ____| |__ \ 
 #     | |__    | |         ) |
 #     |  __|   | |        / / 
@@ -19,7 +19,7 @@ module "simple-k3s-ec2" {
 
   public_subnet_id = module.simple-vpc.public_subnet_ids[0]
 
-  security_group_ids = [module.simple-ec2-sg.id]
+  security_group_ids = [module.simple-k3s-ec2-sg.id]
 
   availability_zone = data.aws_availability_zones.available.names[0]
 
