@@ -15,7 +15,7 @@ variable "instance_type" {
 }
 
 variable "vpc_cidr" {
-  type = list(string)
+  type = string
 }
 
 variable "public_subnet_cidrs" {
