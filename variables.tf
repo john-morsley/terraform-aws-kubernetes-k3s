@@ -9,6 +9,6 @@ variable "ec2_public_ip" {
   type = string
 }
 
-variable "ec2_private_key" {
+variable "ec2_encoded_private_key" {
   type = string
 }

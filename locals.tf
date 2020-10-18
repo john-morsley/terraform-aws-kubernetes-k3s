@@ -13,6 +13,8 @@ locals {
 
   //bucket_name = "${var.name}-${random_pet.bucket.id}"
 
+  ec2_private_key = base64decode(var.ec2_encoded_private_key)
+  
   shared_scripts_folder = "shared-scripts-${random_pet.shared-scripts.id}"
   
 }

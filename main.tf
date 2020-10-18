@@ -20,7 +20,7 @@ resource "null_resource" "install-k3s" {
     type        = "ssh"
     host        = var.ec2_public_ip
     user        = "ubuntu"
-    private_key = var.ec2_private_key
+    private_key = local.ec2_private_key
   }
 
   # https://www.terraform.io/docs/provisioners/file.html
