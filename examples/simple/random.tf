@@ -8,7 +8,3 @@
 resource "random_pet" "name" {
   length = 2
 }
-
-resource "random_pet" "bucket" {
-  length = 3
-}
