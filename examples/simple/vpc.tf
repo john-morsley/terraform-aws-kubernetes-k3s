@@ -6,7 +6,7 @@
 #         \/     |_|       \_____|
 #                             
 
-module "simple-vpc" {
+module "simple-k3s-vpc" {
 
   source = "./../../../terraform-aws-vpc"
   //source = "john-morsley/vpc/aws"

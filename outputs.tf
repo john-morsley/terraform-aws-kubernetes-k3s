@@ -7,6 +7,6 @@
 #                      | |                  
 #                      |_|
 
-//output "name" {
-//  value = local.name
+//output "example" {
+//  value = 
 //}

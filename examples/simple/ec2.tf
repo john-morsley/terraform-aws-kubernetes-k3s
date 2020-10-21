@@ -15,9 +15,9 @@ module "simple-k3s-ec2" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
-  vpc_id = module.simple-vpc.id
+  vpc_id = module.simple-k3s-vpc.id
 
-  public_subnet_id = module.simple-vpc.public_subnet_ids[0]
+  public_subnet_id = module.simple-k3s-vpc.public_subnet_ids[0]
 
   availability_zone = data.aws_availability_zones.available.names[0]
 
