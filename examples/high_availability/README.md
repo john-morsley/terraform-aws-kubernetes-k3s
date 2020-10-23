@@ -1,4 +1,4 @@
-﻿# K3s
+# K3s
 
 ## High Availability (HA)
 
