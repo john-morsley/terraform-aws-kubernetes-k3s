@@ -11,10 +11,22 @@ output "name" {
   value = local.name
 }
 
-output "ec2_name" {
-  value = module.simple-k3s-ec2.name
+output "vpc_id" {
+  value = module.simple-k3s-vpc.id
 }
 
-output "ec2_ssh_command" {
-  value = module.simple-k3s-ec2.ssh_command
+output "nodes" {
+  value = module.simple-k3s.nodes
 }
+
+output "k3s_ec2s" {
+  value = module.simple-k3s.k3s_ec2s
+}
+
+//output "ec2_name" {
+//  value = module.simple-k3s-ec2.name
+//}
+//
+//output "ec2_ssh_command" {
+//  value = module.simple-k3s-ec2.ssh_command
+//}

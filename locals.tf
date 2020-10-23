@@ -9,7 +9,7 @@ locals {
 
   all_cidr_block = "0.0.0.0/0" # All possible IP address range
   
-  ec2_private_key = base64decode(var.ec2_encoded_private_key)
+  //ec2_private_key = base64decode(var.ec2_encoded_private_key)
   
   shared_scripts_folder = "shared-scripts-${random_pet.shared-scripts.id}"
   

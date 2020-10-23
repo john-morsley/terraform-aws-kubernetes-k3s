@@ -10,3 +10,11 @@
 //output "example" {
 //  value = 
 //}
+
+output "nodes" {
+  value = var.nodes
+}
+
+output "k3s_ec2s" {
+  value = module.k3s-ec2
+}

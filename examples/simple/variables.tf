@@ -9,10 +9,10 @@ variable "name" {
   type = string
 }
 
-variable "instance_type" {
-  type    = string
-  default = "t2.medium"
-}
+//variable "instance_type" {
+//  type    = string
+//  default = "t2.medium"
+//}
 
 variable "vpc_cidr" {
   type = string
@@ -21,6 +21,15 @@ variable "vpc_cidr" {
 variable "public_subnet_cidrs" {
   type = list(string)
 }
+
+variable "k3s_nodes" {
+  type = map(object({
+    name          = string # The name of this node: Must be unique
+    node_type     = string # The type of this node: server or agent
+    instance_type = string # The type of this ec2 instance: i.e. t2.medium
+  }))
+}
+
 
 //variable "private_subnet_cidrs" {
 //  type = list(string)

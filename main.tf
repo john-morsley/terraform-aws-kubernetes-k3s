@@ -9,18 +9,17 @@
 
 resource "null_resource" "install-k3s" {
 
-  #count = var.docker ? 1 : 0
-
-  depends_on = [
-    null_resource.get-shared-scripts#,
-    #aws_instance.this
-  ]
+  for_each = var.nodes
+  
+//  depends_on = [
+//    null_resource.get-shared-scripts
+//  ]
 
   connection {
     type        = "ssh"
-    host        = var.ec2_public_ip
+    host        = module.k3s-ec2[each.key].public_ip
     user        = "ubuntu"
-    private_key = local.ec2_private_key
+    private_key = base64decode(module.k3s-ec2[each.key].encoded_private_key)
   }
 
   # https://www.terraform.io/docs/provisioners/file.html
@@ -37,3 +36,26 @@ resource "null_resource" "install-k3s" {
   }
 
 }
+
+# https://www.terraform.io/docs/providers/null/resource.html
+
+//resource "null_resource" "get-kube-config" {
+//
+//  depends_on = [
+//    null_resource.install-k3s
+//  ]
+//
+//  connection {
+//    type        = "ssh"
+//    host        = var.ec2_public_ip
+//    user        = "ubuntu"
+//    private_key = local.ec2_private_key
+//  }
+//  
+//  # https://www.terraform.io/docs/provisioners/remote-exec.html
+//
+//  provisioner "remote-exec" {
+//    inline = ["scp -i ./keys/${}.pem ubuntu@${var.ec2_public_ip}:/etc/rancher/k3s/ks3.yaml k3s.yaml"]
+//  }
+//
+//}

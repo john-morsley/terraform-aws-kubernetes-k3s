@@ -9,3 +9,11 @@ name                = "simple-ks3-example"
 vpc_cidr            = "10.0.0.0/16"   # 65,531 (65,536 possible - 5 reserved by AWS)
 public_subnet_cidrs = ["10.0.1.0/24"] # 251 (256 possible - 5 reserved by AWS) 
 //private_subnet_cidrs = ["10.0.2.0/24"] # 251 (256 possible - 5 reserved by AWS)
+
+k3s_nodes = {
+  node_one = {
+    name          = "server-one"
+    node_type     = "server"
+    instance_type = "t2.medium"
+  }
+}
