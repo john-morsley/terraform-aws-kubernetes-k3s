@@ -25,14 +25,14 @@ resource "null_resource" "install-k3s" {
   # https://www.terraform.io/docs/provisioners/file.html
 
   provisioner "file" {
-    source      = "${path.cwd}/${local.shared_scripts_folder}/k3s/install_k3s.sh 1.18.9+k3s1"
+    source      = "${path.cwd}/${local.shared_scripts_folder}/k3s/install_k3s.sh"
     destination = "install_k3s.sh"
   }
 
   # https://www.terraform.io/docs/provisioners/remote-exec.html
 
   provisioner "remote-exec" {
-    inline = ["chmod +x install_k3s.sh && bash install_k3s.sh"]
+    inline = ["chmod +x install_k3s.sh && bash install_k3s.sh 1.18.10+k3s1"]
   }
 
 }
