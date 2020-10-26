@@ -32,7 +32,7 @@ resource "null_resource" "install-k3s" {
   # https://www.terraform.io/docs/provisioners/remote-exec.html
 
   provisioner "remote-exec" {
-    inline = ["chmod +x install_k3s.sh && bash install_k3s.sh 1.18.10+k3s1"]
+    inline = ["chmod +x install_k3s.sh && bash install_k3s.sh v1.18.10+k3s1"]
   }
 
 }
