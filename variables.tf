@@ -53,6 +53,7 @@ variable "nodes" {
       name = string # The name of this node: Must be unique
       node_type = string # The type of this node: server or agent       
       instance_type = string # The type of this ec2 instance: i.e. t2.medium
+      command = string # The installation command for k3s
     }))
 //  validation {}
 }
